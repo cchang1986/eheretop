@@ -1,0 +1,821 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="content-Type" content="text/html; charset=utf-8"/>
+	<title>厦门亿合恒拓信息科技有限公司</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
+	<meta name="Keywords" content="智能化图形建模系统，配网自动化主站/子站系统，配网业务应用系统，电网GIS应用系统，地下管线应用系统，贴近用户实际应用需求的定制行业应用技术，智能配电网设备，电气自动化设备，智能终端设备，智能存储柜设备，配网业务整体解决方案，电网GIS咨询服务">
+	<meta name="Description" content="厦门亿合恒拓信息科技有限公司专注于电力和新能源领域的产品研发及应用，为能源领域提供行业整体解决方案及信息技术咨询服务。">
+	<link  rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+	<link  rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  	<link  rel="stylesheet" type="text/css" href="css/poposlides.css">
+  	<link  rel="stylesheet" type="text/css" href="css/style.css">
+  	<link  rel="stylesheet" type="text/css" href="css/animate.css">
+  	<link  rel="stylesheet" type="text/css" href="css/global.css">
+  	<script type="text/javascript" src="js/jquery.min.js"></script>
+  	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+ 	<script type="text/javascript" src="js/poposlides.js"></script>
+    <script type="text/javascript" src="js/headBand.min.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=CfWPGdsmN4fqgZ0rlrYXY1NIzKIw5YM2"></script>
+    <!--<script type="text/javascript" src="http://api.map.baidu.com/api?&v=1.0&services=false"></script>  测试   -->
+
+    <style type="text/css">
+      #space {
+        width: 100%
+      }
+
+      #warp {
+        position: absolute;
+        z-index: 9;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 20px auto;
+        color: rgba(209, 255, 255, 1);
+        border: 2px solid;
+        padding: 1em;
+        width: 10em;
+        text-align: center;
+        font-weight: 700;
+        font-size: 1.2em;
+        display: inline-block;
+        text-decoration: none;
+        background: rgba(0, 0, 0, 0.8);
+        opacity: 0;
+      }
+      @media screen and(-ms-high-contrast:active),(-ms-high-contrast:none){
+        /*兼容IE 10-11*/
+        .intro-text{width: inherit;margin: 0 25%;}
+        .before_hr{margin-left: 44.7%}
+        .after_hr{margin-left: 46%}
+      }
+      @media (max-width: 1324px) and (min-width: 1080px){
+          .contact_content{
+              margin-top: 0;
+              padding-left: 0;
+              font-size: 18px !important;
+          }
+          #mapDiv{
+              width: 55% !important;
+          }
+          #contact_us_section_map_bg{
+              width: 80% !important;
+          }
+      }
+      @media (max-width: 1080px) and (min-width: 768px){
+          .contact_content{
+              margin-top: 0;
+              padding-left: 0;
+              font-size: 16px !important;
+          }
+          #mapDiv{
+              width: 50% !important;
+          }
+          #contact_us_section_map_bg{
+              width: 100% !important;
+          }
+      }
+      @media screen and (max-width: 768px){
+          .contact_content{
+              margin-top: 0;
+              padding-left: 0;
+              font-size: 16px !important;
+          }
+          #mapDiv{
+              width: 100% !important;
+          }
+          #contact_us_section_map_bg{
+              width: 100% !important;
+          }
+      }
+      #about_us_section{
+            visibility: hidden;
+        }
+      #main_products{
+            visibility: hidden;
+        }
+      #talent_recruitment_section{
+            visibility: hidden;
+        }
+      #contact_us{
+            visibility: hidden;
+            position: relative;
+        }
+      .contact_content{
+          text-align: left;
+          display: inline-block;
+          vertical-align: top;
+          padding: 50px 0 0 30px;
+          color: #FFFFFF;
+          float: left;
+          font-size: 20px;
+      }
+      .contact_content h4{
+          font-weight: bold;
+      }
+      .contact_content h3{
+          padding-bottom: 20px;
+      }
+      .contact_content p{
+          display: inline-block;
+          vertical-align: bottom;
+
+      }
+      .contact_content img{
+          width: 35px;
+          height: 35px;
+      }
+      .contact_content div{
+          padding: 10px 0;
+      }
+      #contact_us_section_map_bg{
+          width: 70%;
+          margin:30px auto;
+          background-color: rgba(0,0,0, .6);
+      }
+      #mapDiv{
+          width: 55%;
+          height: 400px;
+          display: inline-block;
+          border: 5px solid #FCF5EF;
+          float: right;
+        }
+        #allmap{
+            width: 100%;
+            height: 100%;
+        }
+      .fixclear {
+          clear: both;
+      }
+
+
+    </style>
+</head>
+<body data-spy="scroll" data-target=".scrollspy">
+<div class="headBandDiv"></div>
+<nav id="nav_page" class="navbar navbar-fixed-top my-navbar" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse"
+              data-target="#example-navbar-collapse">
+        <span class="sr-only">切换导航</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">
+        <img class="logo" src="images/logo-white-09.png" alt="this is a logo">
+      </a>
+    </div>
+    <div class="collapse navbar-collapse scrollspy" id="example-navbar-collapse">
+      <ul class="nav navbar-nav navbar-right" data-spy="affix" id="Mynav">
+        <li ><a id="test_target_a_0" href="#particles" class="nav_white">首页</a></li>
+        <li ><a id="test_target_a_one" href="#about_us_section" class="nav_white">关于我们</a></li>
+        <li ><a id="test_target_a_two" href="#main_products_section" class="nav_white">主要产品</a></li>
+        <li ><a id="test_target_a_three" href="#talent_recruitment_section" class="nav_white">人才招聘</a></li>
+        <li ><a id="test_target_a_four" href="#contact_us_section" class="nav_white">联系我们</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- Header -->
+<div class="text-center bg " id="particles" name="home" >
+  <canvas id="space"></canvas>
+
+  <a href="#" id="warp">WARP SPEED</a>
+  <div id="header_section_bg">
+    <div class="intro-text  animated  fadeInUp" style="zoom:1.5;">
+      <h1>亿合恒拓
+      </h1>
+      <p>心亿则乐、齐心合力、持之以恒、开拓进取，愿与你一起开启智慧之窗</p>
+    </div>
+  </div>
+</div>
+<!-- about_section -->
+<div id="about_us_section" class="text_center  ">
+  <div id="about_us">
+    <div class="container">
+      <div class="section_title text_center animated about_us_show1">
+        <h2>关于我们</h2>
+        <hr class="before_hr">
+        <p>ABOUT US</p>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-md-8 col-md-offset-2 animated about_us_show2">
+          <div class="about-text com">
+            <h3 style="text-align: left;">公司概况</h3>
+            <p style="text-indent: 2em;">厦门亿合恒拓信息科技有限公司成立于2017年4月，是一家年轻富有激情的高新技术企业，坐落于美丽的厦门南湖公园边。公司专注于电力和新能源领域的产品研发及应用，为能源领域提供行业整体解决方案及信息技术咨询服务。</p>
+            <p style="text-indent: 2em;margin-top: -10px">主要业务及产品包括：配网自动化、配网业务应用、电网GIS应用、地下管线应用、电力通信应用等软件产品的研发、生产、销售与服务供应；电力系统集成服务、电力业务咨询及设计服务供应；智能配电网设备、电气自动化设备、智能终端设备等解决方案、销售与服务供应。</p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-8 col-md-offset-2 animated about_us_show3">
+          <div class="about-text com">
+            <h3  style="text-align: left;">公司团队</h3>
+            <p style="text-indent: 2em;">
+              研发团队在电力领域具有十年以上项目经验，有着丰富的行业知识及市场渠道。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- products_section -->
+<div id="main_products_section" class="text_center ">
+  <div id="main_products_section_bg">
+    <div id="main_products" class="">
+      <div class="container">
+        <div class="section_title text_center animated main_products_show1">
+          <h2>主要产品</h2>
+          <hr class="before_hr">
+          <p>电力和新能源领域的产品研发及应用，为能源领域提供行业整体解决方案及信息技术咨询服务</p>
+        </div>
+        <div class="space"></div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-4 animated main_products_show2">
+            <div class=" con">
+              <!--<img id="SoftWare" src="images/icon_Software_001.png" alt="软件">-->
+
+                <div class=" advantages_li advantages_li_face ">
+                    <div class="advantages_li_box">
+                        <div class="thumb-wrap  animated  bounceInadv">
+                            <div class="wai animated"></div>
+                            <div class="nei">
+                                <img src="images/icon_Software_blue_part_001.png" class="face_img1 animated" alt="支持标准空间换肤图标">
+                                <img src="images/icon_Software_blue_part_002.png" class="face_img2 animated" alt="支持标准空间换肤图标">
+                                <img src="images/icon_Software_blue_part_003.png" class="face_img3 animated" alt="支持标准空间换肤图标">
+                                <img src="images/icon_Software_blue_part_004.png" class="face_img4 animated" alt="支持标准空间换肤图标">
+                            </div>
+                            <div class="n face"></div>
+                        </div>
+                    </div>
+                </div>
+
+
+              <h3>软件产品</h3>
+              <div class="con_ul">
+                <ul>
+                  <li>配网自动化系统</li>
+                  <li>电网GIS应用系统</li>
+                  <li>配网业务应用系统</li>
+                  <li>地下管线应用系统</li>
+                  <li>智能化图形建模系统</li>
+                  <li>个性化定制行业应用软件</li>
+                </ul>
+              </div>  
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-4 animated main_products_show3">
+            <div class=" con">
+             <!-- <img id="HardWare" src="images/icon_Hardware_001.png" alt="硬件">-->
+
+              <div class=" advantages_li advantages_li_face ">
+                <div class="advantages_li_box">
+                  <div class="thumb-wrap  animated  bounceInadv">
+                    <div class="wai animated"></div>
+                    <div class="nei">
+                      <img src="images/icon_Hardware_blue_part_001.png" class="face_img1 animated" alt="支持标准空间换肤图标">
+                      <img src="images/icon_Hardware_blue_part_002.png" class="face_img2 animated" alt="支持标准空间换肤图标">
+                    </div>
+                    <div class="n skin"></div>
+                  </div>
+                </div>
+              </div>
+
+              <h3>硬件产品</h3>
+              <div class="con_ul">
+                <ul>
+                  <li>智能终端设备</li>
+                  <li>智能配电网设备</li>
+                  <li>电气自动化设备</li>
+                  <li>智能存储柜设备</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-4 animated main_products_show4">
+            <div class=" con">
+              <!--<img id="Consultation" src="images/icon_Consultation_001.png" alt="咨询">-->
+
+              <div class=" advantages_li advantages_li_face ">
+                <div class="advantages_li_box">
+                  <div class="thumb-wrap  animated  bounceInadv">
+                    <div class="wai animated"></div>
+                    <div class="nei">
+                      <img src="images/icon_Consultation_blue_part_001.png" class="face_img1 animated" alt="支持标准空间换肤图标">
+                      <img src="images/icon_Consultation_blue_part_002.png" class="face_img3 animated" alt="支持标准空间换肤图标">
+                      <img src="images/icon_Consultation_blue_part_003.png" class="face_img4 animated" alt="支持标准空间换肤图标">
+                        <!--<div style="background: url(images/icon_Consultation_002_01.png) center no-repeat;" class="pic_zd"></div>-->
+                    </div>
+                    <div class="n tool"></div>
+                  </div>
+                </div>
+              </div>
+
+              <h3>解决方案与咨询</h3>
+              <div class="con_ul">
+                <ul>
+                  <li>电网GIS咨询服务</li>
+                  <li>行业GIS解决方案</li>
+                  <li>配网业务整体解决方案</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- recruit_section -->
+<div id="talent_recruitment_section" class="text_center">
+  <div id="talent_recruitment_section_bg">
+    <div id="talent_recruitment"  class=" ">
+      <div class="section_title text_center  animated talent_recruitment_show1">
+        <h2>人才招聘</h2>
+        <hr class="after_hr">
+        <p>收拾行李，寻找新的自己</p>
+        <p>在这里，你能收获的不仅仅是高薪，还有技能、知识和家人！</p>
+      </div>
+      <div class="animated talent_recruitment_show2">
+        <div class="slides-box">
+          <div class="slides-box-show" >
+              <div class="content_head">
+                <div class="content_title">
+                  <a href="javascript:void(0)">
+                    <span>高级C#开发工程师</span>
+                  </a>
+                    <span class="title_right">
+                        <img src="images/address_work.png" alt="地址">
+                        <span class="location">厦门</span>
+                    </span>
+                </div>
+              </div>
+              <div id="job1" class="item content show animated fadeInUp">
+                <!--<h3>高级C#开发工程师</h3>-->
+                <h4>职位描述:</h4>
+                <ul>
+                  <li>负责公司桌面端产品设计及框架搭建</li>
+                  <li>负责电力相关桌面客户端产品研发</li>
+                  <li>负责公司其他行业桌面客户端产品研发</li>
+                </ul>
+                <!--<h4 style="display: inline-block">工作地点:</h4><span>　厦门</span>-->
+                <h4>岗位要求:</h4>
+                <ul>
+                  <li>精通掌握C#语言，具备一定开发经验，具有C++开发经验者优先</li>
+                  <li>熟悉至少一种数据库系统，如Oracle/ MS SQL Server/ MySQL/SQLITE等，熟练掌握SQL语言</li>
+                  <li>熟练使用Visual Studio开发工具进行代码编写调试，有WPF、WCF开发经验者优先</li>
+                  <li>对计算图形学、GIS、ArcGIS平台熟悉者优先</li>
+                  <li>对于电力行业、测绘知识有一定的了解者优先</li>
+                  <li>有电力、通信、燃气、热力等行业开发经验者优先</li>
+                </ul>
+              </div>
+          </div>
+          <div class="slides-box-show"  style="border-bottom: 1px solid #dddddd">
+            <div class="content_head">
+              <div class="content_title">
+                <a href="javascript:void(0)">
+                  <span>C#开发工程师</span>
+                </a>
+                  <span class="title_right">
+                        <img src="images/address_work.png" alt="地址">
+                        <span class="location">厦门</span>
+                    </span>
+              </div>
+            </div>
+              <div id="job2" class="item content hide animated">
+                <!--<h3>C#开发工程师</h3>-->
+                <h4>职位描述:</h4>
+                <ul>
+                  <li>负责电力相关桌面客户端产品研发</li>
+                  <li>负责公司其他行业桌面客户端产品研发</li>
+                </ul>
+               <!-- <h4 style="display: inline-block">工作地点:</h4><span>　厦门</span>-->
+                <h4>岗位要求:</h4>
+                <ul>
+                  <li>精通掌握C#语言，具备一定开发经验，具有C++开发经验者优先</li>
+                  <li>熟悉至少一种数据库系统，如Oracle/ MS SQL Server/ MySQL/SQLITE等，熟练掌握SQL语言</li>
+                  <li>熟练使用Visual Studio开发工具进行代码编写调试，有WPF、WCF开发经验者优先</li>
+                  <li>对计算图形学、GIS、ArcGIS平台熟悉者优先</li>
+                  <li>对于电力行业、测绘知识有一定的了解者优先</li>
+                  <li>有电力、通信、燃气、热力等行业开发经验者优先</li>
+                </ul>
+              </div>
+          </div>
+        </div>
+      </div>
+      <!--<div class="row  animated talent_recruitment_show2">
+        <div class="slides-box">
+          <ul class="slides">
+             <li>
+              <div class="item">
+                <h3>高级C#开发工程师</h3>
+                <h4>职位描述:</h4>
+                <ul>
+                  <li>负责公司桌面端产品设计及框架搭建</li>
+                  <li>负责电力相关桌面客户端产品研发</li>
+                  <li>负责公司其他行业桌面客户端产品研发</li>
+                </ul>
+                <h4 style="display: inline-block">工作地点:</h4><span>　厦门</span>
+                <h4>岗位要求:</h4>
+                <ul>
+                  <li>精通掌握C#语言，具备一定开发经验，具有C++开发经验者优先</li>
+                  <li>熟悉至少一种数据库系统，如Oracle/ MS SQL Server/ MySQL/SQLITE等，熟练掌握SQL语言</li>
+                  <li>熟练使用Visual Studio开发工具进行代码编写调试，有WPF、WCF开发经验者优先</li>
+                  <li>对计算图形学、GIS、ArcGIS平台熟悉者优先</li>
+                  <li>对于电力行业、测绘知识有一定的了解者优先</li>
+                  <li>有电力、通信、燃气、热力等行业开发经验者优先</li>
+                </ul>
+              </div>
+            </li>
+            <li>
+            <div class="item">
+              <h3>C#开发工程师</h3>
+              <h4>职位描述:</h4>
+              <ul>
+                <li>负责电力相关桌面客户端产品研发</li>
+                <li>负责公司其他行业桌面客户端产品研发</li>
+              </ul>
+              <h4 style="display: inline-block">工作地点:</h4><span>　厦门</span>
+              <h4>岗位要求:</h4>
+              <ul>
+                <li>精通掌握C#语言，具备一定开发经验，具有C++开发经验者优先</li>
+                <li>熟悉至少一种数据库系统，如Oracle/ MS SQL Server/ MySQL/SQLITE等，熟练掌握SQL语言</li>
+                <li>熟练使用Visual Studio开发工具进行代码编写调试，有WPF、WCF开发经验者优先</li>
+                <li>对计算图形学、GIS、ArcGIS平台熟悉者优先</li>
+                <li>对于电力行业、测绘知识有一定的了解者优先</li>
+                <li>有电力、通信、燃气、热力等行业开发经验者优先</li>
+              </ul>
+            </div>
+           </li>
+          </ul>
+        </div>
+      </div>-->
+    </div>
+  </div>
+  <div style="padding: 20px 0;" class=" animated talent_recruitment_show2">
+    <h4 style="display: inline-block;padding-left: 20px;font-weight: bold">投递简历:</h4><a href="mailto:hr@eheretop.com">　hr@eheretop.com</a>
+  </div>
+</div>
+<!-- contact_section -->
+<div id="contact_us_section" class="text_center">
+  <div id="contact_us_section_bg">
+    <div id="contact_us" class=" animated contact_us_show1">
+      <div class="section_title text_center">
+        <h2 style="color: #FFFFFF">联系我们</h2>
+        <hr class="after_hr">
+        <p style="color: #FFFFFF">CONTACT US</p>
+      </div>
+
+        <div id="contact_us_section_map_bg" class="animated contact_us_show2">
+            <div class="contact_content ">
+                <h3>厦门亿合恒拓信息科技有限公司</h3>
+                <div><img src="images/phone_01.png" alt="联系电话"></img><p>　0592-5803993</p></div>
+                <div><img src="images/fax_01.png" alt="传真电话"></img><p>　0592-5803993</p></div>
+                <div><img src="images/mail_01.png" alt="企业邮箱"></img><p><a style="color: #FFFFFF;" href="mailto:heretop@eheretop.com">　heretop@eheretop.com</a></p></div>
+                <div><img src="images/address_01.png" alt="公司地址"></img><p>　厦门市思明区湖滨东路293-299号518</p></div>
+            </div>
+            <div id="mapDiv">
+                <div id="allmap"></div>
+            </div>
+            <div class="fixclear"></div>
+
+        </div>
+    </div>
+  </div>
+</div>
+<div id="back_top">
+  <a href="#"><img src="images/back_top.png" alt=""></a>
+</div>
+<!-- footer -->
+<footer>
+  <div class="container">
+    <div class="footer_section">
+      <p>Copyright © 2017 HERE TOP.</p>
+    </div>
+  </div>
+</footer>
+<script type="text/javascript">
+
+	//导航条
+    $(window).scroll(function () {
+        if ($(".navbar").offset().top > 50) {
+            $("#back_top").css("display","block");
+            $(".navbar-fixed-top").addClass("top-nav");
+            $(".navbar-right").find('a').addClass('nav_black');
+            $(".navbar-right").find('a').removeClass('nav_white');
+            $(".logo").attr({src:'images/logo-red-09.png'});
+
+        }else {
+            $("#back_top").css("display","none");
+            $(".navbar-fixed-top").removeClass("top-nav");
+            $(".navbar-right").find('a').addClass('nav_white');
+            $(".navbar-right").find('a').removeClass('nav_black');
+            $(".logo").attr({src:'images/logo-white-09.png'})};
+
+    });
+
+	//轮播插件调用
+    //$(".slides").poposlides();
+    //滚动进度条插件
+    $('.headBandDiv').headBand({
+        'background':'#008aff',
+        'height':"3"
+    });
+    //affix
+    $("#Mynav").affix({
+        offset: {
+            top: $('#Mynav').offset().top,
+            bottom: $('footer').outerHeight(true) + 40,
+        }
+    });
+
+    /*about_us*/
+    $(window).scroll(function () {
+        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        //console.log($("#about_us_section").offset().top - $(window).height());
+        //console.log(scrollTop);
+        if (scrollTop >= $("#about_us_section").offset().top - $(window).height() + 200 ) {
+
+            setInterval(function () {
+                $(".about_us_show1").css('visibility','visible');
+                $(".about_us_show1").addClass("fadeInUp");
+            }, 150);
+
+
+        };
+
+    });
+    $(window).scroll(function () {
+        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        //console.log($("#about_us_section").offset().top)
+        //console.log($(window).height());
+        if (scrollTop >= $("#about_us_section").offset().top - $(window).height() + 450 ) {
+
+            setInterval(function () {
+                $(".about_us_show2").css('visibility','visible');
+                $(".about_us_show2").addClass("fadeInUp");
+            }, 150);
+
+
+        };
+    });
+    $(window).scroll(function () {
+        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        if (scrollTop >= $("#about_us_section").offset().top - $(window).height() + 600 ) {
+
+            setInterval(function () {
+                $(".about_us_show3").css('visibility','visible');
+                $(".about_us_show3").addClass("fadeInUp");
+            }, 150);
+
+
+        };
+    });
+    /*main_product*/
+    $(window).scroll(function () {
+        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        //console.log($("#main_products_section").offset().top - $(window).height());
+        //console.log(scrollTop);
+
+        if (scrollTop >= $("#main_products_section").offset().top - $(window).height() + 312 ) {
+
+            setInterval(function () {
+                $(".main_products_show1").css('visibility','visible');
+                $(".main_products_show1").addClass("fadeInUp");
+            }, 150);
+
+        }
+    });
+
+    $(window).scroll(function () {
+        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+
+        if (scrollTop >= $("#main_products_section").offset().top - $(window).height() + 512 ) {
+
+            setInterval(function () {
+                $(".main_products_show2").css('visibility','visible');
+                $(".main_products_show2").addClass("fadeInUp");
+            }, 150);
+            setInterval(function () {
+                $(".main_products_show3").css('visibility','visible');
+                $(".main_products_show3").addClass("fadeInUp");
+            }, 450);
+            setInterval(function () {
+                $(".main_products_show4").css('visibility','visible');
+                $(".main_products_show4").addClass("fadeInUp");
+            }, 750);
+
+        }
+    });
+
+
+    /*talent_recruitment*/
+    $(window).scroll(function () {
+        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        //console.log($("#talent_recruitment_section").offset().top - $(window).height());
+        //console.log(scrollTop);
+        if (scrollTop >= $("#talent_recruitment_section").offset().top - $(window).height() + 200 ) {
+
+            setInterval(function () {
+                $(".talent_recruitment_show1").css('visibility','visible');
+                $(".talent_recruitment_show1").addClass("fadeInUp");
+            }, 150);
+        }
+    });
+    $(window).scroll(function () {
+        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        if (scrollTop >= $("#talent_recruitment_section").offset().top - $(window).height() + 450 ) {
+
+            setInterval(function () {
+                $(".talent_recruitment_show2").css('visibility','visible');
+                $(".talent_recruitment_show2").addClass("fadeInUp");
+            }, 150);
+        }
+    });
+    /*contact_us_section*/
+    $(window).scroll(function () {
+        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        //console.log($("#contact_us_section").offset().top - $(window).height());
+        //console.log(scrollTop);
+        if (scrollTop >= $("#contact_us_section").offset().top - $(window).height() + 250 ) {
+
+            setInterval(function () {
+                $(".contact_us_show1").css('visibility','visible');
+                $(".contact_us_show1").addClass("fadeInUp");
+            }, 150)
+            setInterval(function () {
+                $(".contact_us_show2").css('visibility','visible');
+                $(".contact_us_show2").addClass("fadeInUp");
+            }, 300);
+
+
+        }
+    });
+
+    //动画旋转
+    $('.face').mouseover(function () {
+        $(this).siblings(".wai").addClass("rotateIn");
+        $(this).siblings(".nei").children('img').eq(0).addClass("fadeInface1");
+        $(this).siblings(".nei").children('img').eq(1).addClass("fadeInface2");
+        $(this).siblings(".nei").children('img').eq(2).addClass("fadeInface3");
+        $(this).siblings(".nei").children('img').eq(3).addClass("fadeInface4");
+
+    });
+    $('.face').mouseout(function () {
+        $(this).siblings(".wai").removeClass("rotateIn");
+        $(this).siblings(".nei").children('img').eq(0).removeClass("fadeInface1");
+        $(this).siblings(".nei").children('img').eq(1).removeClass("fadeInface2");
+        $(this).siblings(".nei").children('img').eq(2).removeClass("fadeInface3");
+        $(this).siblings(".nei").children('img').eq(3).removeClass("fadeInface4");
+
+    });
+    $('.skin').mouseover(function () {
+        $(this).siblings(".wai").addClass("rotateIn");
+        $(this).siblings(".nei").children('img').eq(0).addClass("flipInYskin");
+        $(this).siblings(".nei").children('img').eq(1).addClass("fadeInUpplat");
+
+
+    });
+    $('.skin').mouseout(function () {
+        $(this).siblings(".wai").removeClass("rotateIn");
+        $(this).siblings(".nei").children('img').eq(0).removeClass("flipInYskin");
+        $(this).siblings(".nei").children('img').eq(1).removeClass("fadeInUpplat");
+
+    });
+    $('.tool').mouseover(function () {
+        $(this).siblings(".wai").addClass("rotateIn");
+        //$(this).siblings(".nei").children('img').eq(0).addClass("fadeInface1");
+        $(this).siblings(".nei").children('img').eq(1).addClass("fadeInface2");
+        setTimeout(function () {
+            $('.tool').siblings(".nei").children('img').eq(2).addClass("fadeInface2");
+        },100);
+
+
+    });
+    $('.tool').mouseout(function () {
+        $(this).siblings(".wai").removeClass("rotateIn");
+       //$(this).siblings(".nei").children('img').eq(0).removeClass("fadeInface1");
+        $(this).siblings(".nei").children('img').eq(1).removeClass("fadeInface2");
+        $(this).siblings(".nei").children('img').eq(2).removeClass("fadeInface2");
+
+    });
+    //人才招聘
+    $('.content_head').click(function () {
+        var index =  $('.content_head').index(this)+1;
+        //alert(index);
+        $('.item').removeClass('show');
+        $('.item').addClass('hide');
+        $("#job"+index).toggleClass('show');
+        $("#job"+index).toggleClass('fadeInUp');
+    });
+    //动画函数部分
+    window.requestAnimFrame = (function(){   return  window.requestAnimationFrame})();
+    var canvas = document.getElementById("space");
+    var c = canvas.getContext("2d");
+
+    var numStars = 1900;
+    var radius = '0.'+Math.floor(Math.random() * 9) + 1  ;
+    var focalLength = canvas.width *2;
+    var warp = 0;
+    var centerX, centerY;
+
+    var stars = [], star;
+    var i;
+
+    var animate = true;
+
+    initializeStars();
+
+    function executeFrame(){
+
+        if(animate)
+            requestAnimFrame(executeFrame);
+        moveStars();
+        drawStars();
+    }
+
+    function initializeStars(){
+        centerX = canvas.width / 2;
+        centerY = canvas.height / 2;
+
+        stars = [];
+        for(i = 0; i < numStars; i++){
+            star = {
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                z: Math.random() * canvas.width,
+                o: '0.'+Math.floor(Math.random() * 99) + 1
+            };
+            stars.push(star);
+        }
+    }
+
+    function moveStars(){
+        for(i = 0; i < numStars; i++){
+            star = stars[i];
+            star.z--;
+
+            if(star.z <= 0){
+                star.z = canvas.width;
+            }
+        }
+    }
+
+    function drawStars(){
+        var pixelX, pixelY, pixelRadius;
+
+        // Resize to the screen
+        if(canvas.width != window.innerWidth || canvas.width != window.innerWidth){
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            initializeStars();
+        }
+        if(warp==0)
+        {c.fillStyle = "rgba(0,10,20,1)";
+            c.fillRect(0,0, canvas.width, canvas.height);}
+        c.fillStyle = "rgba(209, 255, 255, "+radius+")";
+        for(i = 0; i < numStars; i++){
+            star = stars[i];
+
+            pixelX = (star.x - centerX) * (focalLength / star.z);
+            pixelX += centerX;
+            pixelY = (star.y - centerY) * (focalLength / star.z);
+            pixelY += centerY;
+            pixelRadius = 1 * (focalLength / star.z);
+
+            c.fillRect(pixelX, pixelY, pixelRadius, pixelRadius);
+            c.fillStyle = "rgba(209, 255, 255, "+star.o+")";
+            //c.fill();
+        }
+    }
+
+    document.getElementById('warp').addEventListener("click",function(e){
+        window.c.beginPath();
+        window.c.clearRect(0, 0, window.canvas.width, window.canvas.height);
+        window.warp = warp ? 0 : 1;
+        executeFrame();
+    });
+
+    executeFrame();
+    // 百度地图API功能
+    var map = new BMap.Map("allmap");    // 创建Map实例
+    map.centerAndZoom(new BMap.Point(118.115038,24.484705), 15);  // 初始化地图,设置中心点坐标和地图级别
+    map.addControl(new BMap.MapTypeControl());   //添加地图类型控件
+    map.setCurrentCity("厦门市");          // 设置地图显示的城市 此项是必须设置的
+    map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+    var icon = new BMap.Icon('images/pin.png', new BMap.Size(32, 32), {
+        anchor: new BMap.Size(32, 32)
+    });
+
+    var mkr =new BMap.Marker(new BMap.Point(118.115038,24.484705), {
+        icon: icon
+    });
+
+    map.addOverlay(mkr);
+</script>	
+</body>
+</html>
